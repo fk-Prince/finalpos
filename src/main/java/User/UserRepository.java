@@ -7,6 +7,7 @@ public class UserRepository {
 
     public static boolean isUserExist(User user) throws IOException {
         boolean isUserExist = false;
+        if (!userFile.exists()) userFile.createNewFile();
         BufferedReader br = new BufferedReader(new FileReader(userFile));
         String line;
         while ((line = br.readLine()) != null) {
